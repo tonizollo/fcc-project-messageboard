@@ -12,6 +12,30 @@ const app = express();
 
 app.use('/public', express.static(process.cwd() + '/public'));
 
+// Extend cors to null origin for localhost testing
+const corsOptions = {
+  origin: function (origin, callback) {
+    //console.log('origin is:',origin);
+    // Check if the origin is in the allowed list or if it's 'null'
+    if (origin === 'null' || !origin || allowedOrigins.includes(origin)) {
+      //console.log('origin returns true');
+      callback(null, true);
+    } else {
+      // Deny the request if the origin is not allowed
+      //console.log('origin returns false');
+      callback(new Error('Not allowed by CORS'), false);
+    }
+  }
+};
+// Example of an allowed origins whitelist 
+const allowedOrigins = ['https://freecodecamp.org', 'http://127.0.0.1:5500', 'http://localhost:3000'];
+
+// Apply the configured CORS middleware to all paths
+//app.use(cors(corsOptions));
+//app.use(cors());
+//app.use(cors({ origin: ['null', '*', 'http://localhost:3000', 'http://127.0.0.1:5500'] }));
+
+
 app.use(cors({origin: '*'})); //For FCC testing purposes only
 
 app.use(bodyParser.json());

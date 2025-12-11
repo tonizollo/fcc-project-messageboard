@@ -1,5 +1,5 @@
 {
-	"name": "boilerplate-project-messagebaord",
+	"name": "boilerplate-project-messageboard",
 	"version": "0.0.1",
 	"description": "InfoSec project for freeCodeCamp",
 	"main": "server.js",
@@ -9,12 +9,12 @@
 	"dependencies": {
 		"body-parser": "^1.15.2",
 		"chai": "^4.2.0",
-		"chai-http": "^3.0.0",
-		"cors": "^2.8.1",
+		"chai-http": "^5.1.2",
+		"cors": "^2.8.5",
 		"dotenv": "^8.2.0",
 		"express": "^4.14.0",
 		"helmet": "^3.1.0",
-		"mocha": "^3.2.0"
+		"mocha": "^11.7.5"
 	},
 	"repository": {
 		"type": "git",
