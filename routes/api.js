@@ -6,7 +6,8 @@ module.exports = function (app) {
     .post( (req, res) => {
       console.log('POST /api/threads/:board', req.params, req.body);
       //res.send('POST Request received');
-      res.redirect(`/b/${req.params.board}`);
+      res.redirect(`/b/${req.params.board}/`);
+
     })
 
     .get ( (req, res) => {
